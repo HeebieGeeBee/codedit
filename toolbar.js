@@ -1,13 +1,5 @@
 <!-- no doctype - it makes IE ignore the height: 100%. -->
-<html>
-<head>
-<title>toolbarFrame</title>
-<style type="text/css">
-html,body { width: 100%; height: 100%; border: none; margin: 0px; padding: 0px; }
-button { height: 100%; }
-</style>
-<script src="https://togetherjs.com/togetherjs-min.js"></script>
-<script type="text/javascript">
+
 
 var outputFrame = parent.outputFrame;
 var inputFrame = parent.inputFrame;
@@ -150,21 +142,3 @@ function makeUserScript(userScriptLink)
         encodeURIComponent(inputFrame.document.getElementById("input").value + "//.user.js");
 }
 
-</script>
-
-</head>
-
-<body>
-
-<button accesskey="E" onclick="execute(); refocus();"><u>E</u>xecute</button>
-<!-- <button accesskey="R" onclick="reloadAndExecute(); refocus();"><u>R</u>eload and execute</button> -->
-<button accesskey="C" onclick="clearOutput(); refocus();"><u>C</u>lear output</button>
-
-<button onclick="TogetherJS(this); return false;">Start Collabration</button>
-
-<div style="visibility: hidden">
-<iframe name="execFrame" width="5" height="5" src="about:blank"></iframe>
-</div>
-
-</body>
-</html>

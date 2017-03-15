@@ -6,18 +6,21 @@
 <head>
 <title>JavaScript Teacher</title>
 <script src="https://togetherjs.com/togetherjs-min.js"></script>
+<script src="toolbar.js"></script>
 </head>
 
 <!-- about:blank confuses opera.. -->
+<body>
+<button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+<button accesskey="E" onclick="execute(); refocus();"><u>E</u>xecute</button>
+<!-- <button accesskey="R" onclick="reloadAndExecute(); refocus();"><u>R</u>eload and execute</button> -->
+<button accesskey="C" onclick="clearOutput(); refocus();"><u>C</u>lear output</button>
 
-<frameset rows="25,*,*">
 
-  <frame name="toolbarFrame" src="toolbar.html" noresize>
+   <iframe name="inputFrame" src="input.html"></iframe>
 
-  <frame name="inputFrame" src="input.html">
+  <iframe name="outputFrame" src="about:blank"></iframe>
 
-  <frame name="outputFrame" src="about:blank">
 
-</frameset>
-
+</body>
 </html>
