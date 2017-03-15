@@ -68,27 +68,6 @@ function handleError(er, file, lineNumber)
 
 
 
-
-
-function showHideOutput()
-{
-  if (outputFrame.document.body.clientHeight > 100) {
-    // hide
-    savedRows = framesetElement.rows;    
-    framesetElement.rows = "25,*,0";
-  }
-  else {
-    // show. use the previous size, if possible
-    if (savedRows) {
-      framesetElement.rows = savedRows;
-      savedRows = null;
-    }
-    else {
-      framesetElement.rows = "25,*,*";
-    }
-  }
-}
-
 function refocus()
 {
   inputFrame.document.getElementById("input").focus();
@@ -180,10 +159,8 @@ function makeUserScript(userScriptLink)
 <button accesskey="E" onclick="execute(); refocus();"><u>E</u>xecute</button>
 <!-- <button accesskey="R" onclick="reloadAndExecute(); refocus();"><u>R</u>eload and execute</button> -->
 <button accesskey="C" onclick="clearOutput(); refocus();"><u>C</u>lear output</button>
-<button accesskey="S" onclick="showHideOutput(); refocus();"><u>S</u>how/hide output</button>
-<!-- <button accesskey="H" onclick="help(); refocus();"><u>H</u>elp</button> -->
 
-<a href="data:text/html,..." onfocus="makeUserScript(this);" onmouseover="makeUserScript(this);" target="_blank">Install as user script</a>
+<button onclick="TogetherJS(this); return false;">Start Collabration</button>
 
 <div style="visibility: hidden">
 <iframe name="execFrame" width="5" height="5" src="about:blank"></iframe>
